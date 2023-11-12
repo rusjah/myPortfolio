@@ -10,11 +10,19 @@
 :root {
     --main-color: #ffd28e;
     --block-color: #000000;
+    --main-img: url(./img1.jpg);
 }
 body {
     width: 100vw;
     background-color: #171717;
     font-family: 'Roboto';
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
 }
 
 header { 
@@ -41,20 +49,21 @@ header {
 }
 
 .nav {
-    width: 100%;
+    width: fit-content;
     display: none;
     flex-direction: column;
     justify-content: space-around;
     position: relative;
-    background-color: rgb(255, 255, 255, 0.2);
+    background-color: rgb(255, 255, 255, 0.2 );
     border: 1px solid var(--main-color);
     border-radius: 5px;
     border-top-right-radius: 0;
-    width: fit-content;
-    padding: 2vh 8vw 2vh 4vw;
+    padding: 2vh 8vw 1vh 4vw;
+    font-weight: bold;
     position: absolute;
     right: 4vw;
     top: 7vh;
+    z-index: 1;
 }
 
 .nav li {
@@ -105,6 +114,84 @@ header {
     transition: all linear 0.3s;
 }
 
+.home {
+    background-color: var(--block-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh 2vw;
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
+.main-inf {
+    line-height: 5vh;
+}
+
+h2 {
+   color: rgb(139, 87, 18);
+   z-index: 1;
+}
+
+.cv {
+    color: rgb(139, 87, 18);
+    font-weight: bold;
+    background-color: #171717;
+    padding: 1vh 2vw;
+    border-radius: 10px;
+    font-size: 3vw;
+}
+
+.figure {
+    width: 40%;
+    height: 20vh;
+    z-index: 0;
+    background-image: var(--main-img);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 10px black inset, 0 0 60px black inset, 0 0 10px rgb(23, 23, 23);
+    opacity: 0.7;
+}
+
+@media only screen and (min-width: 768px) {
+  
+    .nav {
+        font-size: 2.5vw;
+    }
+
+    .home {
+        justify-content: space-between;
+        padding: 7vh 7vw;
+    }
+
+    .main-inf {
+        line-height: 5vh;
+    }
+    
+    h2 {
+       font-size: 4vw;
+    }
+
+    h4 {
+        font-size: 2.5vw;
+        padding-bottom: 2vh;
+    }
+    
+    .cv {
+        padding: 1.5vh 2.5vw;
+        font-size: 2vw;
+    }
+    
+    .figure {
+        width: 40%;
+        height: 28vh;
+    }
+
+}
+
+
+
 @media only screen and (min-width: 992px) { 
     .logo {
         font-size: 1vw;
@@ -141,5 +228,15 @@ header {
     .menu-btn { 
        display: none;
     }
+
+    .main-inf {
+        line-height: 10vh;
+    }
+    
+    .figure {
+        width: 40%;
+        height: 54vh;
+    }
+    
 }
 
