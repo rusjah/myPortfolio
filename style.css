@@ -431,7 +431,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(29, 20, 12)
+    background-color: rgb(29, 20, 12);
   }
   
   .skill-border {
@@ -441,7 +441,6 @@ h2 {
     width: 90px;
     height: 90px;
     border-radius: 100%;
-    background: linear-gradient(120deg, hsl(27, 48%, 52%) 50%, transparent 50%);
   }
 
   .footer {
