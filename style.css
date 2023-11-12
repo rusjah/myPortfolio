@@ -158,7 +158,7 @@ h2 {
     opacity: 0.7;
 }
 
-.about, .contact, .projects {
+.about, .contact, .projects, .skills {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -237,6 +237,7 @@ h2 {
     background-color: transparent;
     border: none;
     border-bottom:2px solid #815719;
+    color: var(--main-color)
 }
 
 .form textarea {
@@ -246,14 +247,15 @@ h2 {
     background-color: transparent;
     border: none;
     border-bottom:2px solid #815719;
+    color: var(--main-color)
 }
 
 .form button {
-    width: 50%;
-    height: 4vh;
+    width: 40%;
+    height: 5vh;
     border-radius: 20px;
     font-weight: bolder;
-    font-size: 4vw;
+    font-size: 5vw;
     color: #533810;
     background-color: #d09d70;
 }
@@ -387,7 +389,33 @@ h2 {
     }
 } */
 
+.skills-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8vw;
+    flex-wrap: wrap;
+}
 
+.skill {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(29, 20, 12)
+  }
+  
+  .skill-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    background: linear-gradient(120deg, hsl(27, 48%, 52%) 50%, transparent 50%);
+  }
 
 
 @media only screen and (min-width: 768px) {
@@ -424,12 +452,12 @@ h2 {
         height: 28vh;
     }
 
-    .about {
+    .about, .skills {
         gap: 4vh;
         padding: 7vh 7vw;
     }
 
-    .about h3, .contact h3, .projects h3 {
+    .about h3, .contact h3, .projects h3,  .skills h3 {
         font-size: 3vw;
     }
     
@@ -466,6 +494,17 @@ h2 {
     .projects {
         padding: 7vh 7vw;
     }
+    
+    .skill {
+        width: 100px;
+        height: 100px;
+      }
+      
+      .skill-border {
+        width: 110px;
+        height: 110px;
+      }
+    
 }
 
 
@@ -530,17 +569,28 @@ h2 {
         height: 4vh;
     }
 
+    .title {
+        font-size: 2vw;
+    }
+   
+    .content {
+        font-size: 1.5vw;
+    }
+
     .form {
-        width: 60%;
-        gap: 4vh;
+        padding-top: 2vh;
+        width: 50%;
+        gap: 3vh;
     }
     
     .form input {
         height: 10vh;
+        font-size: 2vw;
     }
     
     .form textarea {
-        height: 26vh;
+        height: 16vh;
+        font-size: 2vw;
     }
     
     .form button {
@@ -557,7 +607,6 @@ h2 {
     .pr-list{
         height: 44vh;
     }
-
 
     .project {
         width: 50%;
