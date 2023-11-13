@@ -308,8 +308,9 @@ h2 {
 
 .pr-center {
     /* opacity: 1; */
-    z-index: 1;
+    z-index: 2;
 }
+
 
 .project-img {
     width: 100%;
@@ -652,8 +653,8 @@ h2 {
     }
     
     .pr-center {
-        z-index: 1;
-        opacity: 1;
+        z-index: 3;
+        /* opacity: 1; */
         top: 3vh;
         background-color: var(--block-color);
         box-shadow: 0 0 30px sandybrown;
@@ -661,15 +662,16 @@ h2 {
 
     .pr-left {
         left: -5vw;
-        z-index: 0;
-
+        z-index: 2;
+        /* opacity: 1; */
     }
    
     .pr-right {
-        z-index: 0;
+        z-index: 2;
         right: -5vw;
+        /* opacity: 1; */
     }
-    
+
     .prog-languages {
         font-size: 2vw;
     }

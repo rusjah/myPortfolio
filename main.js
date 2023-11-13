@@ -4,8 +4,8 @@ const skillWrap = document.getElementById('skills-wrap');
 const projects = document.getElementById('pr-list');
 const prevProjBtn = document.getElementById('prev');
 const nextProjBtn = document.getElementById('next');
+const switcher = document.getElementById('switcher')
 
-console.log(skillWrap);
 
 function displaySkils() {
 
@@ -31,33 +31,11 @@ function displaySkils() {
         skillWrap.appendChild(skillBorder);
     }
 }
+displaySkils();
 
-function displayProjects() {
-    data.projects.forEach((i, ind) => {
-        const project = document.createElement('div');
 
-        const projectImg  = createProjImg(i,ind);
-        const usedLanguages = createProgLang(i.progLang);
 
-        let switcher = '';
-
-        if ((ind + 1) % 3 == 0) {
-            switcher = "pr-right";
-        } else if ((ind + 1) % 2 == 0) {
-            switcher = "pr-left";
-        }  else {
-            switcher = "pr-center";
-        }
-
-        project.classList.add("project", switcher);
-        usedLanguages.className = "prog-languages";
-
-        project.append(projectImg, usedLanguages);
-        projects.appendChild(project);
-    })
-}
-
-function createProgLang(arr, par) {
+function createProgLang(arr) {
     const usedLanguages = document.createElement('div');
 
     for (let j of arr) {
@@ -75,7 +53,7 @@ function createProgLang(arr, par) {
     return usedLanguages;
 }
 
-function createProjImg(i, ind) {
+function createProjImg(i) {
         const projectImg = document.createElement('div');
         const projectName = document.createElement('p');
         const projectDetail = document.createElement('a');
@@ -93,7 +71,35 @@ function createProjImg(i, ind) {
 
         projectImg.append(projectName, projectDetail);
         return projectImg;
+}
+
+function createDot(n, switcher) {
+    for (let i = 0; i < n; i++) {
+        const span = document.createElement('span');
+        span.className = "dot";
+        switcher.appendChild(span)
     }
+}
+
+function displayProjects() {
+    projects.innerHTML = '';
+
+    const showedProject = data.projects.slice(0,3);
+    console.log(data.projects);
+    const positionClasses = ['pr-left','pr-center','pr-right'];
+
+
+    for (let i = 0; i < showedProject.length; i++) {
+        const el = showedProject[i];
+        const project = document.createElement('div')
+        const projectImg = createProjImg(el);
+        const usedLanguages = createProgLang(el.progLang);
+
+        project.classList.add("project", positionClasses[i]);
+        usedLanguages.className = "prog-languages";
+        project.append(projectImg, usedLanguages);
+        projects.appendChild(project);
+    }
+}
 
 displayProjects()
-displaySkils();
