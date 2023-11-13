@@ -286,14 +286,18 @@ h2 {
     color: #533810;
     background-color: #d09d70;
 }
-
+.pr-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative; 
+}
 .pr-list{
     width: 100%;
     height: 34vh;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    position: relative;  
+    justify-content: center; 
 }
 
 .project {
@@ -379,7 +383,7 @@ h2 {
 }
 
 .prev {
-    left: 0;
+    left: 0vw;
     border-radius: 0 3px 3px 0;
 }
 
@@ -392,34 +396,9 @@ h2 {
     color: rgb(209, 157, 112);
 }
 
-.dot {
-    cursor: pointer;
-    height: 10px;
-    width: 10px;
-    background-color: #a4580b;
-    border-radius: 50%;
-    margin: 0 0.5vw;
-    display: inline-block;
-    transition: background-color 1s linear;
-}
-
 .active, .dot:hover {
     background-color: #745639;
 }
-
-/* .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-  
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
-    }
-} */
 
 .skills-wrap {
     width: 100%;
@@ -536,12 +515,12 @@ h2 {
     .skill {
         width: 100px;
         height: 100px;
-      }
-      
-      .skill-border {
+    }
+    
+    .skill-border {
         width: 110px;
         height: 110px;
-      }
+    }
     
 }
 
@@ -653,8 +632,7 @@ h2 {
     }
     
     .pr-center {
-        z-index: 3;
-        /* opacity: 1; */
+        z-index: 2;
         top: 3vh;
         background-color: var(--block-color);
         box-shadow: 0 0 30px sandybrown;
@@ -662,14 +640,12 @@ h2 {
 
     .pr-left {
         left: -5vw;
-        z-index: 2;
-        /* opacity: 1; */
+        z-index: 1;
     }
    
     .pr-right {
-        z-index: 2;
+        z-index: 1;
         right: -5vw;
-        /* opacity: 1; */
     }
 
     .prog-languages {
@@ -683,7 +659,7 @@ h2 {
     
     .prev, .next {
         top: 12vh;
-        z-index: 2;
+        z-index: 5;
     }
     
     .prev {
@@ -693,15 +669,6 @@ h2 {
     .next {
         right:-5vw;
     }
-
-    .switcher {
-    }
-    
-    .dot {
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-    }  
     
     .footer {
         font-size: 1.5vw;

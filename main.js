@@ -4,7 +4,7 @@ const skillWrap = document.getElementById('skills-wrap');
 const projects = document.getElementById('pr-list');
 const prevProjBtn = document.getElementById('prev');
 const nextProjBtn = document.getElementById('next');
-const switcher = document.getElementById('switcher')
+
 
 
 function displaySkils() {
@@ -73,19 +73,11 @@ function createProjImg(i) {
         return projectImg;
 }
 
-function createDot(n, switcher) {
-    for (let i = 0; i < n; i++) {
-        const span = document.createElement('span');
-        span.className = "dot";
-        switcher.appendChild(span)
-    }
-}
 
 function displayProjects() {
     projects.innerHTML = '';
 
     const showedProject = data.projects.slice(0,3);
-    console.log(data.projects);
     const positionClasses = ['pr-left','pr-center','pr-right'];
 
 
@@ -103,3 +95,22 @@ function displayProjects() {
 }
 
 displayProjects()
+
+nextProjBtn.addEventListener('click', () => {
+
+    const el = data.projects[0]
+    data.projects.push(el);
+    data.projects.shift();
+    displayProjects()
+    
+})
+
+prevProjBtn.addEventListener('click', () => {
+
+    const el = data.projects[data.projects.length-1]
+    data.projects.unshift(el);
+    data.projects.pop();
+    displayProjects()
+    
+})
+console.log(prevProjBtn.getAttribute('data-counter'));
