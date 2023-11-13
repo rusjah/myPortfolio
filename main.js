@@ -35,10 +35,9 @@ function displaySkils() {
 function displayProjects() {
     data.projects.forEach((i, ind) => {
         const project = document.createElement('div');
-        const projectImg = document.createElement('div');
-        const projectName = document.createElement('p');
-        const projectDetail = document.createElement('a');
-        const usedLanguages = document.createElement('div');
+
+        const projectImg  = createProjImg(i,ind);
+        const usedLanguages = createProgLang(i.progLang);
 
         let switcher = '';
 
@@ -50,12 +49,41 @@ function displayProjects() {
             switcher = "pr-center";
         }
 
-
         project.classList.add("project", switcher);
+        usedLanguages.className = "prog-languages";
+
+        project.append(projectImg, usedLanguages);
+        projects.appendChild(project);
+    })
+}
+
+function createProgLang(arr, par) {
+    const usedLanguages = document.createElement('div');
+
+    for (let j of arr) {
+        const usedLanguage = document.createElement('div');
+        const prjCircle = document.createElement('span');
+        const prjLanContent = document.createElement('span');
+
+        usedLanguage.className = "prog-language";
+        prjCircle.className = "pr-cir";
+        prjLanContent.textContent = j;
+
+        usedLanguage.append(prjCircle, prjLanContent);
+        usedLanguages.appendChild(usedLanguage);
+    }
+    return usedLanguages;
+}
+
+function createProjImg(i, ind) {
+        const projectImg = document.createElement('div');
+        const projectName = document.createElement('p');
+        const projectDetail = document.createElement('a');
+
         projectImg.className = "project-img";
         projectName.className = "pr--name";
         projectDetail.className = "pr-more";
-        usedLanguages.className = "prog-languages";
+
 
         projectDetail.target = "_blank";
         projectDetail.href = i.link;
@@ -64,24 +92,8 @@ function displayProjects() {
         projectImg.style.backgroundImage = i.photo;
 
         projectImg.append(projectName, projectDetail);
-        
-        for (let j of i.progLang) {
-            const usedLanguage = document.createElement('div');
-            const prjCircle = document.createElement('span');
-            const prjLanContent = document.createElement('span');
-
-            usedLanguage.className = "prog-language";
-            prjCircle.className = "pr-cir";
-            prjLanContent.textContent = j;
-
-            usedLanguage.append(prjCircle, prjLanContent);
-            usedLanguages.appendChild(usedLanguage);
-        }
-
-        project.append(projectImg, usedLanguages);
-        projects.appendChild(project);
-    })
-}
+        return projectImg;
+    }
 
 displayProjects()
 displaySkils();
