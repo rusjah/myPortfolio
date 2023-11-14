@@ -5,6 +5,8 @@ const projects = document.getElementById('pr-list');
 const prevProjBtn = document.getElementById('prev');
 const nextProjBtn = document.getElementById('next');
 
+const from = document.getElementById('form');
+
 
 
 function displaySkils() {
@@ -113,4 +115,19 @@ prevProjBtn.addEventListener('click', () => {
     displayProjects()
     
 })
-console.log(prevProjBtn.getAttribute('data-counter'));
+
+
+from.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const msgFromUser = {
+        fname: ev.target.fname.value,
+        lname: ev.target.lname.value,
+        email: ev.target.email.value,
+        msg: ev.target.message.value
+    }
+
+
+})
+
+
+
