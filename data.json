@@ -5,7 +5,8 @@
         "js": 60,
         "git": 70,
         "figma": 60,
-        "node.js": 20
+        "node.js": 20,
+        "tailwind": 40
     },
     "projects": [
         {
