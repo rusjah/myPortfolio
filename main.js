@@ -5,6 +5,9 @@ const projects = document.getElementById('pr-list');
 const prevProjBtn = document.getElementById('prev');
 const nextProjBtn = document.getElementById('next');
 
+const touch = document.getElementsByClassName('touch')
+const checkbox = document.getElementById('checkbox')
+
 const from = document.getElementById('form');
 
 
@@ -61,7 +64,7 @@ function createProjImg(i) {
         const projectDetail = document.createElement('a');
 
         projectImg.className = "project-img";
-        projectName.className = "pr--name";
+        projectName.className = "pr-name";
         projectDetail.className = "pr-more";
 
 
@@ -121,7 +124,6 @@ from.addEventListener('submit', (ev) => {
     ev.preventDefault();
     const msgFromUser = {
         fname: ev.target.fname.value,
-        lname: ev.target.lname.value,
         email: ev.target.email.value,
         msg: ev.target.message.value
     }
@@ -129,4 +131,9 @@ from.addEventListener('submit', (ev) => {
 })
 
 
+for(let i = 0; i < touch.length; i++) {
+    touch[i].addEventListener('click', () => {
+        checkbox.checked = false;
+    })
+}
 

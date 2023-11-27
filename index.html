@@ -9,16 +9,16 @@
 <body>
    <div class="container">
     <header>
-        <p class="logo">RH</p> 
+        <p class="logo"><a href="#home">RH</a></p> 
         <input type="checkbox" name="checkbox" id="checkbox" class="checkbox"> 
         <label for="checkbox" class="menu-container">
             <div class="menu-btn"></div>
         </label>
-        <nav class="nav">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <nav class="nav" id="nav">
+            <li class="touch"><a href="#home">Home</a></li>
+            <li class="touch"><a href="#about">About</a></li>
+            <li class="touch"><a href="#projects">Portpholio</a></li>
+            <li class="touch"><a href="#contact">Contact</a></li>
         </nav>
     </header>
 
@@ -34,38 +34,25 @@
     <section id="about" class="about">
         <h3>About Me</h3>
         <p class="about-me">
-            Hello, my name is Ann Merch, and I am a budding web developer. Despite being relatively new to the field, I have gained practical experience in <strong>HTML, CSS, and JavaScript</strong>. My hands-on work with <strong>Git and Figma</strong> has allowed me to contribute to the creation of functional and visually appealing websites. <br>
+            Hello, my name is Ruslana Hural, and I am a budding web developer. Despite being relatively new to the field, I have gained practical experience in <strong>HTML, CSS, and JavaScript</strong>. My hands-on work with <strong>Git and Figma</strong> has allowed me to contribute to the creation of functional and visually appealing websites. <br>
             What sets me apart is not just my interest but my genuine excitement for learning and growth in the dynamic world of web development. I am committed to continually expanding my skill set and staying updated with the latest industry trends. <br>
             Outside the realm of coding, I find joy in exploring literature, immersing myself in various genres of music, and occasionally embarking on invigorating mountain hikes. These experiences not only enrich my life but also contribute to a well-rounded perspective that I bring to my work.
         </p>
-        <div class="add-info-wrap">
-            <div class="addit-inf">
-                <div class="circle"><div class="point"></div></div>
-                <p class="title">Full Name</p>
-                <p class="content">Ruslana Hural</p>
-            </div>
-            <div class="addit-inf">
-                <div class="circle"><div class="point"></div></div>
-                <p class="title">Email</p>
-                <p class="content">ruslana.hural.j@gmail.com</p>
-            </div>
-            <div class="addit-inf">
-                <div class="circle"><div class="point"></div></div>
-                <p class="title">Linkedln</p>
-                <p class="content"><a target="_blank" href="https://www.linkedin.com">Linkedln.com</a></p>
-            </div>
-        </div>
+        <div class="addit-inf">
+            <a href="https://www.linkedin.com"><ion-icon name="logo-linkedin"></ion-icon></a>
+            <a href = "mailto: rusjah1@gmail.com"><ion-icon name="at-outline"></ion-icon></a>
+            <a href="https://github.com/rusjah"><ion-icon name="logo-github"></ion-icon></a>
+         </div>
     </section>
 
     <section id="projects" class="projects">
-        <h3>Projects</h3>
+        <h3>Portpholio</h3>
         <div class="filter"></div>
         <div id="pr-wrap" class="pr-wrap">
             <a id="prev" class="prev" data-counter="0">&#10094;</a>
             <a id="next" class="next" data-counter="2">&#10095;</a>
 
             <div id="pr-list" class="pr-list">
-
             </div>
         </div>
 
@@ -81,7 +68,7 @@
         <h3>Get in touch</h3>
         <form action="" id="form" class="form">
             <input required type="text" name="fname" id="fname" placeholder="Name">
-            <input required type="text" name="lname" id="lname"  placeholder="Last name">
+            <!-- <input required type="text" name="lname" id="lname"  placeholder="Last name"> -->
             <input required type="email" name="email" id="email"  placeholder="Email">
             <textarea required name="message" id="message" placeholder="Your message to me"></textarea>
             <button type="submit">Send</button>
@@ -92,6 +79,9 @@
         <p>Copyright © 2023 | All rights reserved by <span class="fot-name">Ruslana Hural</span></p>
     </footer>
    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
     <script src="./main.js" type="module"></script>
 </body>
