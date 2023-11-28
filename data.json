@@ -29,6 +29,20 @@
             "link": "https://github.com/Kashaf-Shahraaz/Holiday-page.git",
             "progLang": ["HTML", "CSS"],
             "photo": " url(./projects-data/pr3.png)"
+        },
+        {
+            "id": 4,
+            "name": "Wether",
+            "link": "https://github.com/rusjah/wether.git",
+            "progLang": ["Tailwind", "React"],
+            "photo": " url(./projects-data/pr4.png)"
+        },
+        {
+            "id": 5,
+            "name": "Cats",
+            "link": "https://github.com/rusjah/cats.git",
+            "progLang": ["CSS", "React"],
+            "photo": " url(./projects-data/pr5.png)"
         }
     ]
 }
